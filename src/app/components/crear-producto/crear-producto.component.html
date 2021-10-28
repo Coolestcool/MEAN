@@ -1,0 +1,35 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card"> 
+                <div class="card-body text-center">
+                    <div class="titulo">
+                    <span class="titulo">CREAR PRODUCTO</span>
+                    <form class="mt-3" [formGroup] = "productoForm" (ngSubmit)="agregarProducto()" >
+                        <div class="mb-3">
+                            <input type="text" formControlName = "producto" class="form-control form-control-lg" placeholder="Producto">
+                            <div class="text-danger" *ngIf="productoForm.producto.errors?'required'">
+                                <span>El nombre del producto <strong>es Obligatorio</strong></span>
+                            </div> 
+                          </div>                        
+                          <div class="mb-3">
+                            <input type="text" formControlName = "categoria" class="form-control form-control-lg" placeholder="Categoría"> 
+                          </div>                        
+                          <div class="mb-3">
+                            <input type="text" formControlName = "ubicacion" class="form-control form-control-lg" placeholder="Ubicación"> 
+                          </div>                        
+                          <div class="mb-3">
+                            <input type="number" formControlName = "precio" class="form-control form-control-lg" placeholder="Precio"> 
+                          </div>
+                    </form>
+                    <div class="mb-3">
+                         
+                        <button routerLink="/" class="btn btn-secondary btn-lg float-start">VOLVER</button>
+                        <button type="submit" class="btn btn-success btn-lg float-end">ACEPTAR</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
